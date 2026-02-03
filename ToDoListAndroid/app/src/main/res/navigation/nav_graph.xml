@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <!-- Main -->
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.uasmobileapp.ui.main.MainFragment"
+        android:label="Main">
+
+        <action
+            android:id="@+id/action_mainFragment_to_addTaskFragment"
+            app:destination="@id/addTaskFragment" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_taskListFragment"
+            app:destination="@id/taskListFragment" />
+    </fragment>
+
+    <!-- Add Task -->
+    <fragment
+        android:id="@+id/addTaskFragment"
+        android:name="com.example.uasmobileapp.ui.add.AddTaskFragment"
+        android:label="Add Task" />
+
+    <!-- Task List -->
+    <fragment
+        android:id="@+id/taskListFragment"
+        android:name="com.example.uasmobileapp.ui.list.TaskListFragment"
+        android:label="Task List">
+
+        <action
+            android:id="@+id/action_taskListFragment_to_taskActionFragment"
+            app:destination="@id/taskActionFragment" />
+
+        <action
+            android:id="@+id/action_taskListFragment_to_taskActionConfirmFragment"
+            app:destination="@id/taskActionConfirmFragment" />
+
+        <action
+            android:id="@+id/action_taskListFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+
+    <!-- Confirm Action -->
+    <fragment
+        android:id="@+id/taskActionConfirmFragment"
+        android:name="com.example.uasmobileapp.ui.confirm.TaskActionConfirmFragment"
+        android:label="Confirm Task Action"/>
+
+    <!-- Action -->
+    <fragment
+        android:id="@+id/taskActionFragment"
+        android:name="com.example.uasmobileapp.ui.confirm.TaskActionFragment"
+        android:label="Task Action">
+
+        <action
+            android:id="@+id/action_taskActionFragment_to_taskActionConfirmFragment"
+            app:destination="@id/taskActionConfirmFragment" />
+    </fragment>
+</navigation>
